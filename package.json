@@ -1,15 +1,18 @@
 {
   "name": "react-native-cache-imagewrap",
   "version": "1.0.0",
-  "description": "a wrapper to cache your images from uri , locally and delete it as you want",
+  "description": "A wrapper for caching images from URIs locally and managing deletion.",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "keywords": [
     "react-native",
     "cache",
-    "image-cache"
+    "image-cache",
+    "android-cache",
+    "react-native-image-cache",
+    "react-native-cache-image",
+    "react-native-cache-imagewrap",
+    "image-wrapper",
+    "react-native-image-wrapper"
   ],
   "peerDependencies": {
     "react": "^16.0.0",
@@ -18,5 +21,25 @@
     "@react-native-async-storage/async-storage": "*"
   },
   "author": "Gaurav Roy",
-  "license": "MIT"
+  "license": "MIT",
+  "homepage": "https://github.com/gauravroy1995/react-native-cache-imagewrap",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gauravroy1995/react-native-cache-imagewrap.git"
+  },
+  "bugs": {
+    "url": "https://github.com/gauravroy1995/react-native-cache-imagewrap/issues"
+  },
+  "contributors": [
+    {
+      "name": "Your Name",
+      "email": "your.email@example.com"
+    }
+  ],
+  "scripts": {
+    "test": "jest"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
 }
