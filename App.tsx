@@ -14,7 +14,7 @@ export type CachedImageProps = {
 
 export const CachedImage: React.FC<CachedImageProps> = ({
   uri,
-  cache = false,
+  cache = true,
   headers = {},
   requestType = "GET",
   imgProps = {},
@@ -25,26 +25,28 @@ export const CachedImage: React.FC<CachedImageProps> = ({
   useEffect(() => {
     const fetchAndCacheImage = async (attempt: number = 1) => {
       try {
-        // Check if the image is already cached
-        const cachedImage = await AsyncStorage.getItem(uri);
+        if (cache) {
+          // Check if the image is already cached
+          const cachedImage = await AsyncStorage.getItem(uri);
 
-        if (cachedImage) {
-          // If cached, use the cached image
-          setBase64Image(cachedImage);
-        } else if (cache) {
-          // If not cached and caching is enabled, fetch the image
-          const response = await ReactNativeBlobUtil.fetch(
-            requestType,
-            uri,
-            headers
-          );
-          const base64Data = await response.base64();
+          if (cachedImage) {
+            // If cached, use the cached image
+            setBase64Image(cachedImage);
+          } else if (cache) {
+            // If not cached and caching is enabled, fetch the image
+            const response = await ReactNativeBlobUtil.fetch(
+              requestType,
+              uri,
+              headers
+            );
+            const base64Data = await response.base64();
 
-          // Store the image in AsyncStorage
-          await AsyncStorage.setItem(uri, base64Data);
+            // Store the image in AsyncStorage
+            await AsyncStorage.setItem(uri, base64Data);
 
-          // Set the base64 image for rendering
-          setBase64Image(base64Data);
+            // Set the base64 image for rendering
+            setBase64Image(base64Data);
+          }
         }
       } catch (error) {
         console.error(

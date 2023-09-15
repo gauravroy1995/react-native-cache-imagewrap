@@ -1,6 +1,6 @@
 {
   "name": "react-native-cache-imagewrap",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A wrapper for caching images from URIs locally and managing deletion.",
   "main": "index.js",
   "keywords": [

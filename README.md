@@ -43,13 +43,22 @@ const YourComponent = () => {
   return (
     <CachedImage
       uri={imageUri}
-      cache={true} // Enable caching (default is false)
+      cache={true} // Enable caching (default is true)
       imgProps={{ style: { width: 200, height: 200 } }} // ImageProps for customization
       retryCount={3} // Number of automatic retry attempts (default is 1)
     />
   );
 };
 ```
+
+| Prop Name   | Type                      | Default Value | Description                                         |
+| ----------- | ------------------------- | ------------- | --------------------------------------------------- |
+| uri         | string                    | N/A           | The URI of the image to be displayed.               |
+| cache       | boolean                   | true          | Enable or disable image caching.                    |
+| headers     | { [key: string]: string } | {}            | HTTP headers for fetching the image.                |
+| requestType | "GET" \| "POST"           | "GET"         | HTTP request type for fetching the image.           |
+| imgProps    | ImageProps                | {}            | ImageProps for customization (e.g., width, height). |
+| retryCount  | number                    | 1             | Number of automatic retry attempts.                 |
 
 `deleteCache`
 
@@ -94,5 +103,3 @@ async function prefetchAndCacheImage() {
 // Call the function to prefetch and cache the image
 prefetchAndCacheImage();
 ```
-
-## Contributing
