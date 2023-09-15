@@ -1,0 +1,22 @@
+{
+  "name": "react-native-cache-imagewrap",
+  "version": "1.0.0",
+  "description": "a wrapper to cache your images from uri , locally and delete it as you want",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "react-native",
+    "cache",
+    "image-cache"
+  ],
+  "peerDependencies": {
+    "react": "^16.0.0",
+    "react-native": ">= 0.65.0",
+    "react-native-blob-util": "> 0.17.0",
+    "@react-native-async-storage/async-storage": "*"
+  },
+  "author": "Gaurav Roy",
+  "license": "MIT"
+}
